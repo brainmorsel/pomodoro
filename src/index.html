@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="title">Pomodoro</title>
+  <link id="favicon" rel="icon" type="image/svg" href="images/tomato_green.svg">
+  <link rel="stylesheet" href="pomodoro.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pomodoro</h1>
+
+    <div id="timer" class="col">
+      <div class="clock">
+        <span id="minutes"></span><span class="semicolon">:</span><span id="seconds"></span>
+      </div>
+      <button id="start" class="button">Start</button>
+      <button id="stop" class="button">Stop</button>
+      <button id="pomodoro" class="button">Pomodoro</button>
+      <div class="row">
+        <button id="shortBreak" class="button">Short Break</button>
+        <button id="longBreak" class="button">Long Break</button>
+      </div>
+    </div>
+
+    <div id="visualStats"></div>
+
+    <div class="settings">
+      <div class="row">
+        <div class="col">
+            <label for="pomodoroSize">Pomodoro:</label>
+            <input id="pomodoroSize" type="text" placeholder="25:00" />
+            <label for="shortBreakSize">Short Break:</label>
+            <input id="shortBreakSize" type="text" placeholder="5:00" />
+            <label for="longBreakSize">Long Break:</label>
+            <input id="longBreakSize" type="text" placeholder="15:00" />
+            <label for="longBreakSize">
+              every
+              <input id="longBreakPeriod" type="number" placeholder="4" min="1" />
+              pomodoros.
+            </label>
+        </div>
+        <div class="col">
+          <label for="alarmType">Alarm Type:</label>
+          <select id="alarmType">
+            <option value="none">None</option>
+            <option value="alarm_chime">Chime</option>
+            <option value="alarm_bell" selected>Bell</option>
+            <option value="alarm_beeps">Beeps</option>
+            <option value="alarm_boops">Boops</option>
+          </select>
+          <label for="alarmVolume">Alarm Volume:</label>
+          <div class="row">
+            <input type="range" id="alarmVolume" min=0 max=100 value=50>
+          </div>
+          <label>&nbsp;</label>
+          <button id="alarmTest">Alarm Test</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <input id="enableNotifications" type="checkbox" />
+      <label for="enableNotifications">
+        Enable desktop notifications.
+      </label>
+    </div>
+    <div class="row">
+      <input id="enableAutoBreak" type="checkbox" />
+      <label for="enableAutoBreak">
+        Autostart of the break.
+      </label>
+    </div>
+    <div class="row">
+      <input id="enableAutoPomodoro" type="checkbox" />
+      <label for="enableAutoPomodoro">
+        Autostart of next pomodoro.
+      </label>
+    </div>
+
+    <footer>
+      Created by <a href="https://www.brainmorsel.com/">Brain Morsel</a>
+      — <a href="https://github.com/brainmorsel/pomodoro">Github</a>
+    </footer>
+  </div>
+
+  <audio id="alarm_chime">
+    <source src="audio/one_chime.mp3" type="audio/mpeg"></audio>
+  <audio id="alarm_bell">
+    <source src="audio/one_bell.mp3" type="audio/mpeg"></audio>
+  <audio id="alarm_beeps">
+    <source src="audio/three_beeps.mp3" type="audio/mpeg"></audio>
+  <audio id="alarm_boops">
+    <source src="audio/three_boops.mp3" type="audio/mpeg"></audio>
+  <script type="text/javascript" src="pomodoro.js"></script>
+</body>
+</html>
+
